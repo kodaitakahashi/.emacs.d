@@ -133,6 +133,3 @@
 (depends-on "helm-pydoc")
 (depends-on "helm-perldoc")
 (depends-on "helm-open-github")
-
-;;;; php
-(depends-on "php-mode")
