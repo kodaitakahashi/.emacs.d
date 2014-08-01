@@ -94,5 +94,11 @@
 (keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
 (define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line) ;; C-i で展開
 
+;; php-mode
+(require 'php-mode)
+ 
+(setq php-mode-force-pear t) ;PEAR規約のインデント設定にする
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときphp-modeを自動起動する
+
 
 (provide 'init)
