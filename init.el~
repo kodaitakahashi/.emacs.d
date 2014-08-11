@@ -88,6 +88,7 @@
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; マークアップ言語全部で使う
 (add-hook 'css-mode-hook  'emmet-mode) ;; CSSにも使う
+(add-hook 'php-mode-hook  'emmet-mode) ;; phpにも使う
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent はスペース2個
 (eval-after-load "emmet-mode"
   '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
@@ -99,6 +100,10 @@
  
 (setq php-mode-force-pear t) ;PEAR規約のインデント設定にする
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときphp-modeを自動起動する
+
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 
 
 (provide 'init)

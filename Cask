@@ -106,9 +106,9 @@
 ;; shell
 (depends-on "shell-pop")
 
-;; sub packages
+; sub packages
 
-;;;; auto-complete sources
+;; auto-complete sources
 (depends-on "ac-slime")
 (depends-on "ac-nrepl")
 (depends-on "go-autocomplete")
@@ -117,15 +117,15 @@
 (depends-on "robe")
 (depends-on "ac-c-headers")
 
-;;;; popwin
+;; popwin
 (depends-on "import-popwin")
 
-;;;; go-mode
+;; go-mode
 (depends-on "go-eldoc")
 (depends-on "helm-godoc" :git "https://github.com/syohex/emacs-helm-godoc.git")
 (depends-on "golint")
 
-;;;; helm
+;; helm
 (depends-on "helm-swoop")
 (depends-on "helm-gtags")
 (depends-on "helm-descbinds")
@@ -134,5 +134,9 @@
 (depends-on "helm-perldoc")
 (depends-on "helm-open-github")
 
-;;;; php
+;; php
 (depends-on "php-mode")
+
+;; javascript
+(depends-on "js2-mode")
+ 

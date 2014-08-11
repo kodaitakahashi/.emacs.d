@@ -101,5 +101,13 @@
 (setq php-mode-force-pear t) ;PEAR規約のインデント設定にする
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときphp-modeを自動起動する
 
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;;js2-mode
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+
 
 (provide 'init)
