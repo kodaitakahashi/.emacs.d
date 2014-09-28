@@ -1,0 +1,6 @@
+ls
+ruby numeron.rb 
+5
+ruby numeron.rb 
+3
+exit

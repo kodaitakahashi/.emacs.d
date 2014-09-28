@@ -1,5 +1,3 @@
-(set-default-coding-systems 'utf-8-dos) ; デフォルトの文字コード
-
 ;; ファイル末の開業がなければ追加
 (setq require-final-newline t)
 
