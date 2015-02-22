@@ -110,7 +110,6 @@
 
 ;; auto-complete sources
 (depends-on "ac-slime")
-(depends-on "ac-nrepl")
 (depends-on "go-autocomplete")
 (depends-on "ac-ispell")
 (depends-on "ac-etags")
@@ -142,6 +141,8 @@
 
 ;;ruby
 (depends-on "ruby-mode")
+(depends-on "ruby-electric")
+(depends-on "ruby-block")
  
 ;; coffeescript
 (depends-on "coffee-mode")
@@ -149,5 +150,6 @@
 ;; Compile
 (depends-on "smart-compile")
 
-;; xmpfilter
-(depends-on "rcodetools")
+;;win-switch
+(depends-on "win-switch")
+
