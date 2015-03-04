@@ -1,0 +1,13 @@
+;;; helm-godoc-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide 'helm-godoc-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; helm-godoc-autoloads.el ends here

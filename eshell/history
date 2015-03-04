@@ -1,128 +1,128 @@
-php exercise4/array6.php 
-php exercise4/array6.php 
-php exercise4/array6.php 
-php exercise4/array6.php 
-php exercise4/array6.php 
-php exercise4/array6.php 
-php exercise4/array6.php 
-php while_sample.php 
-php while_sample.php 
-php while_sample.php 
-php exercise4/array7.php 
-php exercise4/array6.php 
-php exercise4/array7.php 
-php for_sample.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-php exercise4/array8.php 
-mkdir exercise5 exercise6
-php exercise5/function1.php 
-php exercise5/function2.php 
-php exercise5/function2.php 
-mkdir exercise5 exercise6
-php exercise5/function2.php
-php exercise5/function2.php
-php exercise5/function3.php
-php exercise5/function2.php
-php exercise5/function3.php
-php exercise5/function4.php
-php exercise5/function2.php
-php exercise5/function3.php
-php exercise5/function4.php
-php exercise5/function5.php
-php exercise5/function5.php
-php exercise5/function5.php
-php exercise5/function5.php
-php exercise5/function5.php
-php exercise6/file1.php 
-php exercise6/file1.php 
-php exercise6/file1.php 
-touch exercise6/data.txt
-php exercise6/file1.php 
-php exercise6/file1.php 
-php exercise6/file1.php 
-php exercise6/file1.php 
-php array.php 
-php array.php 
-php array.php 
-php array.php 
-php array.php 
-php array.php 
-php array.php 
-php array.php 
-php array.php 
-php exercise6/file1.php 
-less exercise6/data.txt 
-php exercise6/file1.php 
-less exercise6/data.txt 
-less exercise6/data.txt 
-php exercise6/file1.php 
-php exercise6/file1.php
+php string3.php
+php string3.php
+php string3.php
+php string4.php
+php string4.php
+php string5.php
+php string5.php
+cd ..
+cd ..
+cd 2day/
+php fizzbuzz/fixxbuzz.php 
+php string5.php
+php fizzbuzz/fixxbuzz.php 
+php fizzbuzz/fixxbuzz.php 
+php fizzbuzz/fixxbuzz.php 
+cd ../1day/exercise7/
 ls
-cd exercise6/
+php string4.php
+php string4.php
+php string3.php
+php string3.php
+php string3.php
+php string3.php
+php array.php 
+php string3.php
+php string3.php
+php -S localhost:8000 -t .
+php -S localhost:8000 -t .
+cd ..
 ls
+cd total/
+php -S localhost:8000 -t .
+cd ..
 ls
 cd ..
 ls
-less now.txt 
+cd 2day/req/
+php -S localhost:8000 -t .
+cd ..
+php -S localhost:8000 -t .
+c[Sun Feb 22 14:27:26 2015] ::1:54626 [200]: /search1.php
+cd req/
+php -S localhost:8000 -t .
+cd ../res/
+ls
+ls
+[Sun Feb 22 14:43:53 2015] ::1:54779 ls[500]: /fruits.php - parse error in /Users/kodaitakahashi/ITCARET/PHP/2day/req/fruits.php on line 8
+ls
+php -S localhost:8000 -t .
 cd ..
 ls
-cd 1day/
+cd sesshion/
 ls
-cd exercise6/
+php -S localhost:8000 -t .
+[Sun Feb 22 16:10:25 2015] ::1:55959 [200]: /session.php?
+cd ..
+php -S localhost:8000 -t .
+php -S localhost:8000 -t .
+ruby auth.rb
+ruby auth.rb
+ruby auto_uploads.rb 
+ruby auto_uploads.rb 
+ruby auto_uploads.rb 
+ruby auto_uploads.rb 
+ruby auto_uploads.rb 
+ruby -cw auto_uploads.rb 
+ruby -cw auto_uploads.rb 
+ruby -cw auto_uploads.rb 
+ruby -cw auto_uploads.rb 
+ruby -cw auto_uploads.rb 
+ruby -cw auto_uploads.rb ruby -cw auto_uploads.rb 
+ruby -cw auto_uploads.rb
+ruby -cw auto_uploads.rb
+ruby -cw auto_uploads.rb
+ruby -cw auto_uploads.rb
+ruby -cw auto_uploads.rb
+ruby -cw auto_uploads.rb
+mv auto_uploads.rb Flickr_uploads.rb
 ls
-php exercise6/file1.php 
-php file1.php 
-ls
-cat now.txt 
-php file2.php 
-php file2.php 
-php file2.php 
-cat array.txt 
-php file3.php
-php file3.php
-php file3.php
-php file3.php
-php file3.php
-cat copy.txt 
-cat copy.txt 
-cat copy.txt 
-php file3.php
-cat copy.txt 
-php file3.php
-cat copy.txt 
-php file3.php
-cat copy.txt 
-cd ../exercise7/
-ls
-ls
-php string1.php 
-php file3.php
-php string1.php 
-php string2.php
-php string2.php
-php string2.php
+ruby -cw auto_uploads.rb
+ruby -cw upload_to_Flickr.rb 
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
+ruby upload_to_Flickr.rb
 cd ..
 ls
-cd exercise6/
-cd ../exercise5
+cd clorer/
 ls
-php function2.php
+mv google_imgget.ruby image_get.rb
+ls
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby -cw image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby image_get.rb 
+ruby test.rb 
+ruby test.rb 

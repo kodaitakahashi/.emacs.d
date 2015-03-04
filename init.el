@@ -1,4 +1,21 @@
+;;英字フォント設定
+(set-face-attribute 'default nil
+                    :family "Ricry"
+                    :height 140)
 
+;;日本語フォント設定
+(set-fontset-font
+ nil 'japanese-jisx0208
+ (font-spec :family "Ricty"))
+
+;;フォントサイズ
+(defconst FONT_SIZE 12)
+
+;;バックアップファイルを作らない
+(setq make-backup-files nil)
+
+;;.#*をつくらない
+(setq auto-save-default nil)
 ;; ファイル末の開業がなければ追加
 (setq require-final-newline t)
 
@@ -75,7 +92,13 @@
 (global-unset-key [left])
 
 ;;global-set-key
+(global-set-key (kbd "C-c <down>") 'windmove-down)
+(global-set-key (kbd "C-c <up>") 'windmove-up)
+(global-set-key (kbd "C-c <left>") 'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key [down] 'eshell)
+
+
 
 ;; load path
 (add-to-list 'load-path "~/.emacs.d/")
