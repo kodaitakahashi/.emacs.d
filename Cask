@@ -143,13 +143,10 @@
 (depends-on "ruby-mode")
 (depends-on "ruby-electric")
 (depends-on "ruby-block")
- 
+
 ;; coffeescript
 (depends-on "coffee-mode")
 
 ;; Compile
 (depends-on "smart-compile")
-
-;;win-switch
-(depends-on "win-switch")
 

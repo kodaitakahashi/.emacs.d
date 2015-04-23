@@ -1,128 +1,128 @@
-php string3.php
-php string3.php
-php string3.php
-php string4.php
-php string4.php
-php string5.php
-php string5.php
-cd ..
-cd ..
-cd 2day/
-php fizzbuzz/fixxbuzz.php 
-php string5.php
-php fizzbuzz/fixxbuzz.php 
-php fizzbuzz/fixxbuzz.php 
-php fizzbuzz/fixxbuzz.php 
-cd ../1day/exercise7/
+make dc13
+./dc13
+make dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make test.c
+make test.c
 ls
-php string4.php
-php string4.php
-php string3.php
-php string3.php
-php string3.php
-php string3.php
-php array.php 
-php string3.php
-php string3.php
-php -S localhost:8000 -t .
-php -S localhost:8000 -t .
-cd ..
+make test.c
+gcc -o test test.c
+gcc -o test test.c
 ls
-cd total/
-php -S localhost:8000 -t .
-cd ..
+./test
+gcc -o test test.c
+make test.c
+gcc -o test test.c
+./test
+make dc13
+./dc13
+make dc13
+./dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+make dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+make dc13
+./dc13
+c
+cd 
 ls
-cd ..
+mkdir takane
+cd takane 
 ls
-cd 2day/req/
-php -S localhost:8000 -t .
-cd ..
-php -S localhost:8000 -t .
-c[Sun Feb 22 14:27:26 2015] ::1:54626 [200]: /search1.php
-cd req/
-php -S localhost:8000 -t .
-cd ../res/
+mkdir 1
+cd 1
 ls
+ruby 2_1.rb
+ruby 2_2.rb 
+ruby 2_3.rb 
+ruby 2_4.rb 
+ruby 2_5.rb 
+ruby 2_5.rb 
+ruby 2_6.rb 
+ruby 2_7.rb 
+ruby 2_8.rb 
+ruby 2_8.rb 
+ruby 2_9.rb 
+ruby 2_9.rb 
+ruby 2_9.rb 
+ruby 2_9.rb 
 ls
-[Sun Feb 22 14:43:53 2015] ::1:54779 ls[500]: /fruits.php - parse error in /Users/kodaitakahashi/ITCARET/PHP/2day/req/fruits.php on line 8
+mkdir 2
 ls
-php -S localhost:8000 -t .
-cd ..
+cd 2
 ls
-cd sesshion/
-ls
-php -S localhost:8000 -t .
-[Sun Feb 22 16:10:25 2015] ::1:55959 [200]: /session.php?
-cd ..
-php -S localhost:8000 -t .
-php -S localhost:8000 -t .
-ruby auth.rb
-ruby auth.rb
-ruby auto_uploads.rb 
-ruby auto_uploads.rb 
-ruby auto_uploads.rb 
-ruby auto_uploads.rb 
-ruby auto_uploads.rb 
-ruby -cw auto_uploads.rb 
-ruby -cw auto_uploads.rb 
-ruby -cw auto_uploads.rb 
-ruby -cw auto_uploads.rb 
-ruby -cw auto_uploads.rb 
-ruby -cw auto_uploads.rb ruby -cw auto_uploads.rb 
-ruby -cw auto_uploads.rb
-ruby -cw auto_uploads.rb
-ruby -cw auto_uploads.rb
-ruby -cw auto_uploads.rb
-ruby -cw auto_uploads.rb
-ruby -cw auto_uploads.rb
-mv auto_uploads.rb Flickr_uploads.rb
-ls
-ruby -cw auto_uploads.rb
-ruby -cw upload_to_Flickr.rb 
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-ruby upload_to_Flickr.rb
-cd ..
-ls
-cd clorer/
-ls
-mv google_imgget.ruby image_get.rb
-ls
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby -cw image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby image_get.rb 
-ruby test.rb 
-ruby test.rb 
+ruby -cw 3_1.rb 

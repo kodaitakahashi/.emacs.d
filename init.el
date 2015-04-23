@@ -1,6 +1,6 @@
 ;;英字フォント設定
 (set-face-attribute 'default nil
-                    :family "Ricry"
+                    :family "Ricty-Regular"
                     :height 140)
 
 ;;日本語フォント設定
@@ -98,12 +98,6 @@
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key [down] 'eshell)
 
-
-
-;; load path
-(add-to-list 'load-path "~/.emacs.d/")
-(require 'load-paths)
-
 ;; cask
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
@@ -148,6 +142,7 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+;;;rub
 ;;ruby-mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
@@ -155,6 +150,14 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 
+;;ruby-electric
+;(require 'ruby-electric)
+;(add-hook 'ruby-mode-hook'(lambda()(ruby-electric-mode t)))
+;(setq ruby-electric-expand-delimiters-list nil)
 
+;;ruby-block----highlight matching block
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle t)
 
 (provide 'init)
