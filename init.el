@@ -8,6 +8,13 @@
  nil 'japanese-jisx0208
  (font-spec :family "Ricty"))
 
+;; 背景透過
+(if window-system (progn
+                    (set-background-color "Black")
+                    (set-foreground-color "LightGray")
+                    (set-cursor-color "Gray")
+                    (set-frame-parameter nil 'alpha 70) ;透明度
+                    ))
 ;;フォントサイズ
 (defconst FONT_SIZE 12)
 
