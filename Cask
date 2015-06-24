@@ -143,6 +143,8 @@
 (depends-on "ruby-mode")
 (depends-on "ruby-electric")
 (depends-on "ruby-block")
+(depends-on "ruby-end")
+
 
 ;; coffeescript
 (depends-on "coffee-mode")
@@ -150,3 +152,5 @@
 ;; Compile
 (depends-on "smart-compile")
 
+;; Scala
+(depends-on "scala-mode2")
