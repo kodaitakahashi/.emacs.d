@@ -97,20 +97,25 @@
 (global-unset-key [right])
 (global-unset-key [down])
 (global-unset-key [left])
+(global-unset-key (kbd "C-o"))
 
 ;;global-set-key
-;ウィンドウ移動(下)
+                                        ;ウィンドウ移動(下)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
-;ウィンドウ移動(上)
+                                        ;ウィンドウ移動(上)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
-;ウィンドウ移動(左)
+                                        ;ウィンドウ移動(左)
 (global-set-key (kbd "C-c <left>") 'windmove-left)
-;ウィンドウ移動(右)
+                                        ;ウィンドウ移動(右)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
-;eshell起動
+                                        ;eshell起動
 (global-set-key [down] 'eshell)
-;リロード
+                                        ;リロード
 (global-set-key (kbd "C-c r") 'eval-buffer)
+
+;;tramp
+(require 'tramp)
+(setq tramp-default-method "ssh")
 
 ;; cask
 (require 'cask "~/.cask/cask.el")
@@ -138,10 +143,10 @@
 (define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line) ;; C-i で展開
 
 ;; php-mode
-;(require 'php-mode)
+                                        ;(require 'php-mode)
 
-;(setq php-mode-force-pear t) ;PEAR規約のインデント設定にする
-;(add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときphp-modeを自動起動する
+                                        ;(setq php-mode-force-pear t) ;PEAR規約のインデント設定にする
+                                        ;(add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときphp-modeを自動起動する
 
 ;; web-mode
 (require 'web-mode)
@@ -161,12 +166,12 @@
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
 (add-hook 'ruby-mode '(lambda ()
-	(local-set-key (kbd "RET") 'newline-and-indent)
-))
+                        (local-set-key (kbd "RET") 'newline-and-indent)
+                        ))
 (add-to-list 'auto-mode-alist'("\\.rb$latex".ruby-mode))
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-;インデントの改良
+                                        ;インデントの改良
 (setq ruby-deep-indent-paren-style nil)
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
   (let ((column (current-column))
@@ -184,31 +189,31 @@
       (when (> offset 0) (forward-char offset)))))
 
 ;;ruby-electric
-;(require 'ruby-electric)
-;(add-hook 'ruby-mode-hook'(lambda()(ruby-electric-mode t)))
-;(setq ruby-electric-expand-delimiters-list nil)
+                                        ;(require 'ruby-electric)
+                                        ;(add-hook 'ruby-mode-hook'(lambda()(ruby-electric-mode t)))
+                                        ;(setq ruby-electric-expand-delimiters-list nil)
 
 ;;ruby-block----highlight matching block
 (require 'ruby-block)
-;endの対応している行のハイライト
+                                        ;endの対応している行のハイライト
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle t)
 
 ;;ruby-end
-;endや括弧の自動挿入
+                                        ;endや括弧の自動挿入
 (require 'ruby-end)
 (add-hook 'ruby-mode-hook
-  '(lambda()
-   (abbrev-mode 1)
-   (electric-pair-mode t)
-   (electric-indent-mode t)
-   (electric-layout-mode t)))
+          '(lambda()
+             (abbrev-mode 1)
+             (electric-pair-mode t)
+             (electric-indent-mode t)
+             (electric-layout-mode t)))
 
 
 ;;;markdown
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
+  "Major mode for editing Markdown files" t)
 (setq markdown-command-needs-filename t) 
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
@@ -217,9 +222,27 @@
 ;;scala
 (require 'scala-mode2)
 (add-hook 'scala-mode-hock '(lambda ()
-	(local-set-key (kbd "RET") 'newline-and-indent)
-	(local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
-))
+                              (local-set-key (kbd "RET") 'newline-and-indent)
+                              (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
+                              ))
+
+
+(require 'skk)
+;;skk-server AquaSKK
+(setq skk-server-portnum 1178)
+(setq skk-server-host "localhost")
+(setq mac-pass-control-to-system nil)
+
+(global-set-key "\C-x\C-j" 'skk-mode)
+
+(add-hook 'isearch-mode-hook
+          (function (lambda ()
+                      (and (boundp 'skk-mode) skk-mode
+                           (skk-isearch-mode-setup)))))
+(add-hook 'isearch-mode-end-hook
+          (function (lambda ()
+                      (and (boundp 'skk-mode) skk-mode (skk-isearch-mode-cleanup))
+                      (and (boundp 'skk-mode-invoked) skk-mode-invoked
+                           (skk-set-cursor-properly)))))
 
 (provide 'init)
-
