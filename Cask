@@ -154,3 +154,8 @@
 
 ;; Scala
 (depends-on "scala-mode2")
+
+;;vagrant-ssh
+(depends-on "vagrant-tramp")
+;;ddskk
+(depends-on "ddskk")
