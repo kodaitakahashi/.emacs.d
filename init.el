@@ -15,6 +15,8 @@
                     (set-cursor-color "Gray")
                     (set-frame-parameter nil 'alpha 70) ;透明度
                     ))
+;;起動時のメニューの削除
+(setq inhibit-startup-message t)
 ;;フォントサイズ
 (defconst FONT_SIZE 12)
 
@@ -34,6 +36,9 @@
 
 ;;メニューバー非表示
 (menu-bar-mode -1)
+
+;;行番号表示
+(global-linum-mode t)
 
 ;; set font and screen
 (progn
@@ -235,6 +240,12 @@
 
 (global-set-key "\C-x\C-j" 'skk-mode)
 
+(autoload 'skk-mode "skk" nil t)
+(autoload 'skk-auto-fill-mode "skk" nil t)
+(autoload 'skk-tutorial "skk-tut" nil t)
+(autoload 'skk-isearch-mode-setup "skk-isearch" nil t)
+(autoload 'skk-isearch-mode-cleanup "skk-isearch" nil t)
+
 (add-hook 'isearch-mode-hook
           (function (lambda ()
                       (and (boundp 'skk-mode) skk-mode
@@ -245,4 +256,35 @@
                       (and (boundp 'skk-mode-invoked) skk-mode-invoked
                            (skk-set-cursor-properly)))))
 
+;;find-fileでskk-modeにする
+(add-hook 'find-file-hooks
+          '(lambda()
+             (progn
+               (eval-expression (skk-mode) nil)
+               )))
+
+;; ミニバッファ上でも skk-mode にする
+;; skk-latin-mode でアルファベット入力にしておく
+(add-hook 'minibuffer-setup-hook
+          '(lambda()
+             (progn
+               (eval-expression (skk-mode) nil)
+               (skk-latin-mode (point))
+               ;; ミニバッファ上に「nil」と表示させないために, 空文字をミニバッファに表示
+               (minibuffer-message "")
+               )))
+
+;; ruby-mode上でskk-modeにする
+(add-hook 'ruby-mode-hooks
+          '(lambda()
+             (progn
+               (eval-expression (skk-mode) nil)
+               )))
+
+;; php-mode上でskk-modeにする
+(add-hook 'php-mode-hooks
+          '(lambda()
+             (progn
+               (eval-expression (skk-mode) nil)
+               )))
 (provide 'init)
