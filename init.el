@@ -2,12 +2,10 @@
 (set-face-attribute 'default nil
                     :family "Ricty-Regular"
                     :height 140)
-
 ;;日本語フォント設定
 (set-fontset-font
  nil 'japanese-jisx0208
  (font-spec :family "Ricty"))
-
 ;; 背景透過
 (if window-system (progn
                     (set-background-color "Black")
@@ -19,61 +17,43 @@
 (setq inhibit-startup-message t)
 ;;フォントサイズ
 (defconst FONT_SIZE 12)
-
 ;;バックアップファイルを作らない
 (setq make-backup-files nil)
-
 ;;.#*をつくらない
 (setq auto-save-default nil)
 ;; ファイル末の開業がなければ追加
 (setq require-final-newline t)
-
 ;; tabは４文字 改行後は自動インデント
 (setq-default tab-width 4 indent-tabs-mode nil)
-
 ;;ツールバー非表示
 (tool-bar-mode -1)
-
 ;;メニューバー非表示
 (menu-bar-mode -1)
-
 ;;行番号表示
 (global-linum-mode t)
-
 ;;カレントディレクトリ指定
 (cd "~/")
-
 ;; set font and screen
 (progn
-
   ;; 文字の色を設定します。
   (add-to-list 'default-frame-alist '(foreground-color . "azure1"))
-
   ;; 背景色を設定します。
   (add-to-list 'default-frame-alist '(background-color . "black"))
-
   ;; カーソルの色を設定します。
   (add-to-list 'default-frame-alist '(cursor-color . "green"))
-
   ;; マウスポインタの色を設定します。
   (add-to-list 'default-frame-alist '(mouse-color . "green"))
-
   ;; モードラインの文字の色を設定します。
   (set-face-foreground 'mode-line "white")
-
   ;; モードラインの背景色を設定します。
   (set-face-background 'mode-line "DimGrey")
-
   ;; 選択中のリージョンの色を設定します。
   (set-face-background 'region "Blue")
-
   ;; モードライン（アクティブでないバッファ）の文字色を設定します。
   (set-face-foreground 'mode-line-inactive "gray30")
-
   ;; モードライン（アクティブでないバッファ）の背景色を設定します。
   (set-face-background 'mode-line-inactive "gray85")
-  )
-
+)
                                         ;====================================
 ;;全角スペースとかに色を付ける
                                         ;====================================
@@ -99,14 +79,12 @@
                               (if font-lock-mode
                                   nil
                                 (font-lock-mode t))))
-
 ;;global-unset-key
 (global-unset-key [up])
 (global-unset-key [right])
 (global-unset-key [down])
 (global-unset-key [left])
 (global-unset-key (kbd "C-o"))
-
 ;;global-set-key
                                         ;ウィンドウ移動(下)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
@@ -120,21 +98,16 @@
 (global-set-key [down] 'eshell)
                                         ;リロード
 (global-set-key (kbd "C-c r") 'eval-buffer)
-
 ;;PATHの読み込み
 (load-file (expand-file-name "~/.emacs.d/shellenv.el"))
 (dolist (path (reverse (split-string (getenv "PATH") ":" )))
 (add-to-list 'exec-path path))
-
 ;;tramp
 (require 'tramp)
 (setq tramp-default-method "ssh")
-
 ;; cask
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
-
-
 ;; packages
 (require 'package)
 (add-to-list 'package-archives
@@ -142,12 +115,10 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
-
 ;;undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode t)
 (global-set-key (kbd "C-x u") 'undo-tree-redo)
-
 ;;emmet-mode
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; マークアップ言語全部で使う
@@ -158,26 +129,15 @@
   '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
 (keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
 (define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line) ;; C-i で展開
-
-;; php-mode
-                                        ;(require 'php-mode)
-
-                                        ;(setq php-mode-force-pear t) ;PEAR規約のインデント設定にする
-                                        ;(add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときphp-modeを自動起動する
-
 ;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
 (add-hook 'sgml-mode-hook 'web-mode)
-
-
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
 ;;js2-mode
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
 ;;;ruby
 ;;ruby-mode
 (autoload 'ruby-mode "ruby-mode"
@@ -205,12 +165,6 @@
       (indent-line-to indent)
       (when (> offset 0) (forward-char offset)))))
 
-;;ruby-electric
-                                        ;(require 'ruby-electric)
-                                        ;(add-hook 'ruby-mode-hook'(lambda()(ruby-electric-mode t)))
-                                        ;(setq ruby-electric-expand-delimiters-list nil)
-
-;;ruby-block----highlight matching block
 (require 'ruby-block)
 (ruby-block-mode t) ;endの対応している行のハイライト
 (setq ruby-block-highlight-toggle t)
@@ -223,8 +177,6 @@
              (electric-pair-mode t)
              (electric-indent-mode t)
              (electric-layout-mode t)))
-
-
 ;;;markdown
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode"
@@ -233,18 +185,15 @@
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
 ;;scala
 (require 'scala-mode2)
 (add-hook 'scala-mode-hock '(lambda ()
                               (local-set-key (kbd "RET") 'newline-and-indent)
                               (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
                               ))
-
 ;; scss-mode
 (require 'scss-mode)
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
-
 ;; インデント幅を2にする
 ;; コンパイルは compass watchで行うので自動コンパイルをオフ
 (defun scss-custom ()
@@ -256,21 +205,17 @@
   )
 (add-hook 'scss-mode-hook
           '(lambda() (scss-custom)))
-
 (require 'skk)
 ;;skk-server AquaSKK
 (setq skk-server-portnum 1178)
 (setq skk-server-host "localhost")
 (setq mac-pass-control-to-system nil)
-
 (global-set-key "\C-x\C-j" 'skk-mode)
-
 (autoload 'skk-mode "skk" nil t)
 (autoload 'skk-auto-fill-mode "skk" nil t)
 (autoload 'skk-tutorial "skk-tut" nil t)
 (autoload 'skk-isearch-mode-setup "skk-isearch" nil t)
 (autoload 'skk-isearch-mode-cleanup "skk-isearch" nil t)
-
 (add-hook 'isearch-mode-hook
           (function (lambda ()
                       (and (boundp 'skk-mode) skk-mode
@@ -280,14 +225,12 @@
                       (and (boundp 'skk-mode) skk-mode (skk-isearch-mode-cleanup))
                       (and (boundp 'skk-mode-invoked) skk-mode-invoked
                            (skk-set-cursor-properly)))))
-
 ;;find-fileでskk-modeにする
 (add-hook 'find-file-hooks
           '(lambda()
              (progn
                (eval-expression (skk-mode) nil)
                )))
-
 ;; ミニバッファ上でも skk-mode にする
 ;; skk-latin-mode でアルファベット入力にしておく
 (add-hook 'minibuffer-setup-hook
@@ -298,14 +241,12 @@
                ;; ミニバッファ上に「nil」と表示させないために, 空文字をミニバッファに表示
                (minibuffer-message "")
                )))
-
 ;; ruby-mode上でskk-modeにする
 (add-hook 'ruby-mode-hooks
           '(lambda()
              (progn
                (eval-expression (skk-mode) nil)
                )))
-
 ;; php-mode上でskk-modeにする
 (add-hook 'php-mode-hooks
           '(lambda()
@@ -324,5 +265,4 @@
              (progn
                (eval-expression (skk-mode) nil)
                )))
-
 (provide 'init)
