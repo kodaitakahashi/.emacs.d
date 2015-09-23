@@ -138,6 +138,10 @@
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+;;undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode t)
+(global-set-key (kbd "C-x u") 'undo-tree-redo)
 
 ;;emmet-mode
 (require 'emmet-mode)
