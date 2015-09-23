@@ -159,3 +159,6 @@
 (depends-on "vagrant-tramp")
 ;;ddskk
 (depends-on "ddskk")
+
+;; scss-mode
+(depends-on "scss-mode")

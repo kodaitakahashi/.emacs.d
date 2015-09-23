@@ -40,6 +40,9 @@
 ;;行番号表示
 (global-linum-mode t)
 
+;;カレントディレクトリ指定
+(cd "~/")
+
 ;; set font and screen
 (progn
 
@@ -200,14 +203,12 @@
 
 ;;ruby-block----highlight matching block
 (require 'ruby-block)
-                                        ;endの対応している行のハイライト
-(ruby-block-mode t)
+(ruby-block-mode t) ;endの対応している行のハイライト
 (setq ruby-block-highlight-toggle t)
 
 ;;ruby-end
-                                        ;endや括弧の自動挿入
-(require 'ruby-end)
-(add-hook 'ruby-mode-hook
+(require 'ruby-end) 
+(add-hook 'ruby-mode-hook  ;endや括弧の自動挿入
           '(lambda()
              (abbrev-mode 1)
              (electric-pair-mode t)
@@ -231,6 +232,21 @@
                               (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
                               ))
 
+;; scss-mode
+(require 'scss-mode)
+(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
+
+;; インデント幅を2にする
+;; コンパイルは compass watchで行うので自動コンパイルをオフ
+(defun scss-custom ()
+  "scss-mode-hook"
+  (and
+   (set (make-local-variable 'css-indent-offset) 2)
+   (set (make-local-variable 'scss-compile-at-save) nil)
+   )
+  )
+(add-hook 'scss-mode-hook
+          '(lambda() (scss-custom)))
 
 (require 'skk)
 ;;skk-server AquaSKK
@@ -287,4 +303,17 @@
              (progn
                (eval-expression (skk-mode) nil)
                )))
+;; scss-mode上でskk-modeにする
+(add-hook 'scss-mode-hooks
+          '(lambda()
+             (progn
+               (eval-expression (skk-mode) nil)
+               )))
+;; web-mode上でskk-modeにする
+(add-hook 'web-mode-hooks
+          '(lambda()
+             (progn
+               (eval-expression (skk-mode) nil)
+               )))
+
 (provide 'init)

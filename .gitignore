@@ -8,8 +8,10 @@
 /.emacs.desktop.lock
 *.elc
 auto-save-list
-tramp
+./tramp
 .\#*
+./
+./SessionDesktop.el
 
 # Org-mode
 .org-id-locations
