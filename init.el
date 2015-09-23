@@ -121,6 +121,11 @@
                                         ;リロード
 (global-set-key (kbd "C-c r") 'eval-buffer)
 
+;;PATHの読み込み
+(load-file (expand-file-name "~/.emacs.d/shellenv.el"))
+(dolist (path (reverse (split-string (getenv "PATH") ":" )))
+(add-to-list 'exec-path path))
+
 ;;tramp
 (require 'tramp)
 (setq tramp-default-method "ssh")
