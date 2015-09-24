@@ -6,6 +6,14 @@
 (set-fontset-font
  nil 'japanese-jisx0208
  (font-spec :family "Ricty"))
+;; ウィンドウ設定
+(setq initial-frame-alist
+      (append
+       '((top . 22)
+         (left . 0)
+         (width . 175)
+         (height . 30)
+         ) initial-frame-alist))
 ;; 背景透過
 (if window-system (progn
                     (set-background-color "Black")
