@@ -144,6 +144,7 @@
 (depends-on "ruby-electric")
 (depends-on "ruby-block")
 (depends-on "ruby-end")
+(depends-on "rubocop")
 
 
 ;; coffeescript
