@@ -141,12 +141,15 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
 (add-hook 'sgml-mode-hook 'web-mode)
+;; robocop
+(require 'rubocop)
 ;; Flycheck
+(require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
-;;js2-mode
-(require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;;;ruby
+(add-hook 'ruby-mode-hook
+          '(lambda ()
+             (setq flycheck-checker 'ruby-rubocop)
+             (flycheck-mode 1)))
 ;;ruby-mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
@@ -273,4 +276,23 @@
              (progn
                (eval-expression (skk-mode) nil)
                )))
+
+(load-file (concat user-emacs-directory "./env.el"))
+(when (require 'wakatime-mode nil t)
+  (setq wakatime-api-key 'WAKATIME_API)
+  ;; すべてのバッファで訪問時に記録を開始
+  (global-wakatime-mode)
+  )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(wakatime-cli-path "/Users/kodaitakahashi/.emacs.d/bin/wakatime_cli.py"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 (provide 'init)
