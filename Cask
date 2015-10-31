@@ -163,3 +163,6 @@
 
 ;; scss-mode
 (depends-on "scss-mode")
+
+;; wakatime
+(depends-on "wakatime-mode")
