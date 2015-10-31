@@ -279,7 +279,7 @@
 
 (load-file (concat user-emacs-directory "./env.el"))
 (when (require 'wakatime-mode nil t)
-  (setq wakatime-api-key 'WAKATIME_API)
+  (setq wakatime-api-key (getenv "WAKATIME_API"))
   ;; すべてのバッファで訪問時に記録を開始
   (global-wakatime-mode)
   )
