@@ -35,4 +35,5 @@ auto-save-list
 # cask packages
 .cask/
 
-
+# .el
+./env.el
