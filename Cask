@@ -166,3 +166,6 @@
 
 ;; wakatime
 (depends-on "wakatime-mode")
+
+;; slim
+(depends-on "slim-mode")
