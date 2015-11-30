@@ -127,6 +127,13 @@
 (require 'undo-tree)
 (global-undo-tree-mode t)
 (global-set-key (kbd "C-x u") 'undo-tree-redo)
+;;helm
+(helm-mode 1)
+(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+(define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
+(define-key helm-map (kbd "C-h") 'delete-backward-char)
+(custom-set-variables '(helm-ff-auto-update-initial-value nil))
 ;;emmet-mode
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; マークアップ言語全部で使う
