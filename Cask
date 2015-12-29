@@ -169,3 +169,6 @@
 
 ;; slim
 (depends-on "slim-mode")
+
+;; sass-mode
+(depends-on "sass-mode")
