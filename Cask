@@ -145,6 +145,8 @@
 (depends-on "ruby-block")
 (depends-on "ruby-end")
 (depends-on "rubocop")
+;;;ruby_on_rails
+(depends-on "robe")
 
 
 ;; coffeescript

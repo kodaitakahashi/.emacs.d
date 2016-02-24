@@ -145,11 +145,11 @@
 (keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
 (define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line) ;; C-i で展開
 ;; web-mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
+(require 'web-mode)(add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
 (add-hook 'sgml-mode-hook 'web-mode)
 ;; robocop
 (require 'rubocop)
+
 ;; Flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -195,6 +195,21 @@
              (electric-pair-mode t)
              (electric-indent-mode t)
              (electric-layout-mode t)))
+;;auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-use-menu-map t)
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+(setq ac-auto-show-menu 0.5)
+(setq ac-menu-height 20)
+;;robe
+(require 'robe)
+(autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
+(autoload 'ac-robe-setup "ac-robe" "auto-complete robe" nil nil)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
+(add-hook 'ruby-mode-hook 'robe-mode)
+
 ;;;markdown
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode"
