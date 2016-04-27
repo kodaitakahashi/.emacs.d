@@ -14,13 +14,6 @@
          (width . 175)
          (height . 30)
          ) initial-frame-alist))
-;; 背景透過
-(if window-system (progn
-                    (set-background-color "Black")
-                    (set-foreground-color "LightGray")
-                    (set-cursor-color "Gray")
-                    (set-frame-parameter nil 'alpha 70) ;透明度
-                    ))
 ;;起動時のメニューの削除
 (setq inhibit-startup-message t)
 ;;フォントサイズ
@@ -123,6 +116,9 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
+;; theme
+(setq custom-theme-directory "~/.emacs.d/themes/")
+(load-theme 'lawrence t)
 ;;undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode t)
@@ -182,11 +178,12 @@
     (when indent
       (indent-line-to indent)
       (when (> offset 0) (forward-char offset)))))
-
+; マジックコメント解除
+(custom-set-variables
+ '(ruby-insert-encoding-magic-comment nil))
 (require 'ruby-block)
 (ruby-block-mode t) ;endの対応している行のハイライト
 (setq ruby-block-highlight-toggle t)
-
 ;;ruby-end
 (require 'ruby-end) 
 (add-hook 'ruby-mode-hook  ;endや括弧の自動挿入
@@ -352,4 +349,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+(modify-coding-system-alist 'file "\\.tex\\'" 'euc-japan-unix)
+
 (provide 'init)
