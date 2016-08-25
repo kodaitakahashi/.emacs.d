@@ -143,6 +143,13 @@
 ;; web-mode
 (require 'web-mode)(add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
 (add-hook 'sgml-mode-hook 'web-mode)
+;; jsx
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
 ;; robocop
 (require 'rubocop)
 
@@ -153,6 +160,19 @@
           '(lambda ()
              (setq flycheck-checker 'ruby-rubocop)
              (flycheck-mode 1)))
+(flycheck-define-checker jsxhint-checker
+  "A JSX syntax and style checker based on JSXHint."
+
+  :command ("jsxhint" source)
+  :error-patterns
+  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+  :modes (web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (equal web-mode-content-type "jsx")
+              ;; enable flycheck
+              (flycheck-select-checker 'jsxhint-checker)
+              (flycheck-mode))))
 ;;ruby-mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
@@ -352,5 +372,6 @@
 
 
 (modify-coding-system-alist 'file "\\.tex\\'" 'euc-japan-unix)
+(modify-coding-system-alist 'file "\\.bib\\'" 'euc-japan-unix)
 
 (provide 'init)
