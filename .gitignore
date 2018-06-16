@@ -1,4 +1,4 @@
-
+env
 ### https://raw.github.com/github/gitignore/77e29837cf03b59fc4d885ea011bbd683caaaf85/Global/Emacs.gitignore
 
 # -*- mode: gitignore; -*-
@@ -32,8 +32,8 @@ auto-save-list
 # AUCTeX auto folder
 /auto/
 
-# cask packages
-.cask/
 
 # .el
 ./env.el
+
+/straight/

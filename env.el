@@ -1,0 +1,1 @@
+(setenv "WAKATIME_API" "a2694395-14ef-4aa2-9582-01aa6c2d83df")
